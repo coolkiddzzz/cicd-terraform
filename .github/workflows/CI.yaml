@@ -10,11 +10,11 @@ on:
 # declare the running agent (what VM to run?)
 
 jobs: # what task u want it to run 
- terraform-ci: # can be called anything 
-   runs-on: ubuntu-latest # docker image 
+  terraform-ci: # can be called anything 
+    runs-on: ubuntu-latest # docker image 
 
 # steps to run 
-   steps:
+    steps:
 # git clone 
     - name: Checkout repository
       uses: actions/checkout@v2
