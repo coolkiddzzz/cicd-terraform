@@ -32,6 +32,14 @@ jobs: # what task u want it to run
    - name: Initialize Terraform
      run: terraform init
 
+#terraform fmt
+   - name: Format Terraform
+     run: terraform fmt
+
+#terraform validate
+   - name: validate Terraform
+     run: terraform validate
+
 #terraform plan
    - name: Terraform Plan
      run: terraform plan
