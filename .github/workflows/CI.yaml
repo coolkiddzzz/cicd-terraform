@@ -3,9 +3,9 @@ name: Terraform Deployment
 
 # whenever push any code into github repo, this yaml file will run 
 on:
- push:
-   branches:
-     - main
+  push:
+    branches:
+      - main
 
 # declare the running agent (what VM to run?)
 
