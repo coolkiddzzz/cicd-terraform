@@ -1,3 +1,4 @@
+# CI
 name: Terraform Deployment
 
 # whenever push any code into github repo, this yaml file will run 
