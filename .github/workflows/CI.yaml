@@ -14,7 +14,7 @@ jobs: # what task u want it to run
    steps:
   ##setup
    - name: Checkout repository
-     uses: actions/checkout@v2
+     uses: actions/checkout@v2 # uses - library in terraform
 
   #aws configure
    - name: Configure AWS credentials
@@ -30,7 +30,7 @@ jobs: # what task u want it to run
 
 #terraform init
    - name: Initialize Terraform
-     run: terraform init
+     run: terraform init # run - command line that we run on our own
 
 #terraform fmt
    - name: Format Terraform
