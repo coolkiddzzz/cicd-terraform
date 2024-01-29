@@ -8,7 +8,7 @@ on:
 
 # declare the running agent (what VM to run?)
 jobs: # what task u want it to run 
- terraform-ci: # can be called anything 
+ terraform-cd: # can be called anything 
    runs-on: ubuntu-latest # docker image 
 
    steps:
@@ -34,4 +34,4 @@ jobs: # what task u want it to run
 
 #terraform apply
     - name: Terraform Apply
-      run: terraform apply --auto-approve
+     run: terraform apply --auto-approve
