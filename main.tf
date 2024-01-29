@@ -12,5 +12,5 @@ provider "aws" {
 }
 
 resource "aws_sns_topic" "user_updates" {
-  name = "waiyee-sns-test"
+  name = "waiyee-sns-test-branch"
 }
