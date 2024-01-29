@@ -33,5 +33,5 @@ jobs: # what task u want it to run
      run: terraform init # run - command line that we run on our own
 
 #terraform apply
-    - name: Terraform Apply
+   - name: Terraform Apply
      run: terraform apply --auto-approve
