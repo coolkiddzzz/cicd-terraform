@@ -14,3 +14,12 @@ provider "aws" {
 resource "aws_sns_topic" "user_updates" {
   name = "waiyee-sns-test-branch"
 }
+
+
+resource "aws_s3_bucket" "new_bucket" {
+  bucket = "wy-tf-bucket"
+
+  tags = {
+    Name        = "wy-bucket"
+  }
+}
