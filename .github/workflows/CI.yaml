@@ -1,4 +1,4 @@
-name: Terraform CI test
+name: Terraform CI test 2
 
 # whenever push any code into github repo, this yaml file will run 
 on:
