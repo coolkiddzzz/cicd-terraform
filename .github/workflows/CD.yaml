@@ -2,18 +2,9 @@ name: Terraform CD
 
 # whenever push any code into github repo, this yaml file will run 
 on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Environment to run tf apply on'
-        required: true
-        default: "dev"
-        type: choice
-        options:
-        ##these options here can be used to load different blocks of yaml for different steps
-        - dev
-        - staging
-        - prod
+ push:
+   branches:
+     - master
 
 # declare the running agent (what VM to run?)
 jobs: # what task u want it to run 
