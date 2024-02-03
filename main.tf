@@ -23,3 +23,36 @@ resource "aws_s3_bucket" "new_bucket" {
     Name        = "wy-bucket"
   }
 }
+
+resource "aws_instance" "wy-webserver1" {
+  ami           = "ami-0e9107ed11be76fde"
+  instance_type = "t2.micro"
+  associate_public_ip_address = "true"
+  subnet_id = "subnet-0d647d78d2309afc0"
+  vpc_security_group_ids = "sg-0044a66b4c899960b"
+  tags = {
+    Name = "waiyee-webserver"
+  }
+}
+
+resource "aws_instance" "wy-webserver2" {
+  ami           = "ami-0e9107ed11be76fde"
+  instance_type = "t2.micro"
+  associate_public_ip_address = "true"
+  subnet_id = "subnet-0d647d78d2309afc0"
+  vpc_security_group_ids = "sg-0044a66b4c899960b"
+  tags = {
+    Name = "waiyee-webserver"
+  }
+}
+
+resource "aws_instance" "wy-ans" {
+  ami           = "ami-0e9107ed11be76fde"
+  instance_type = "t2.micro"
+  associate_public_ip_address = "true"
+  subnet_id = "subnet-0d647d78d2309afc0"
+  vpc_security_group_ids = "sg-0044a66b4c899960b"
+  tags = {
+    Name = "waiyee-webserver"
+  }
+}
