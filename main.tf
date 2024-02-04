@@ -35,3 +35,27 @@ resource "aws_instance" "webserver" {
     Name = "waiyee-webserver1"
   }
 }
+
+resource "aws_instance" "webserver" {
+  ami           = "ami-0e9107ed11be76fde"
+  instance_type = "t2.micro"
+  associate_public_ip_address = "true"
+  subnet_id = var.subnet_id
+  vpc_security_group_ids =  var.vpc_security_group_ids
+  key_name = var.key_name
+  tags = {
+    Name = "waiyee-webserver2"
+  }
+}
+
+resource "aws_instance" "webserver" {
+  ami           = "ami-0e9107ed11be76fde"
+  instance_type = "t2.micro"
+  associate_public_ip_address = "true"
+  subnet_id = var.subnet_id
+  vpc_security_group_ids =  var.vpc_security_group_ids
+  key_name = var.key_name
+  tags = {
+    Name = "waiyee-webserver-ansible"
+  }
+}
