@@ -33,9 +33,9 @@ resource "aws_instance" "webserver" {
   ami           = "ami-0e9107ed11be76fde"
   instance_type = "t2.micro"
   associate_public_ip_address = "true"
-  subnet_id = "subnet-0d647d78d2309afc0"
-  vpc_security_group_ids =  ["sg-035b6442f9f859979"]
-  key_name = 'coolkidz-key-test'
+  subnet_id = var.subnet_id
+  vpc_security_group_ids =  var.vpc_security_group_ids
+  key_name = "coolkidz-key-test"
   tags = {
     Name = "waiyee-webserver1"
   }
