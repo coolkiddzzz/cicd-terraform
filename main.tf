@@ -24,12 +24,6 @@ resource "aws_s3_bucket" "new_bucket" {
   }
 }
 
-resource "aws_key_pair" "deployer" {
-  key_name   = "deployer-key"
-  public_key = var.public_key
-}
-
-
 resource "aws_instance" "webserver" {
   ami           = "ami-0e9107ed11be76fde"
   instance_type = "t2.micro"
