@@ -34,4 +34,4 @@ jobs: # what task u want it to run
 
 #terraform apply
    - name: Terraform Apply
-     run: terraform apply --auto-approve
+     run: terraform apply --auto-approve -var-file="secret.tfvars"
