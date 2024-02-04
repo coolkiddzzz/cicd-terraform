@@ -22,7 +22,7 @@ resource "aws_s3_bucket" "new_bucket" {
     Name        = "wy-bucket"
   }
 }
-
+ 
 resource "aws_instance" "webserver-1" {
   ami           = "ami-0e9107ed11be76fde"
   instance_type = "t2.micro"
