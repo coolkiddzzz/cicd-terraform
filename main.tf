@@ -24,7 +24,7 @@ resource "aws_s3_bucket" "new_bucket" {
   }
 }
 
-resource "aws_instance" "webserver" {
+resource "aws_instance" "webserver-1" {
   ami           = "ami-0e9107ed11be76fde"
   instance_type = "t2.micro"
   associate_public_ip_address = "true"
@@ -36,7 +36,7 @@ resource "aws_instance" "webserver" {
   }
 }
 
-resource "aws_instance" "webserver" {
+resource "aws_instance" "webserver-2" {
   ami           = "ami-0e9107ed11be76fde"
   instance_type = "t2.micro"
   associate_public_ip_address = "true"
@@ -48,7 +48,7 @@ resource "aws_instance" "webserver" {
   }
 }
 
-resource "aws_instance" "webserver" {
+resource "aws_instance" "webserver-ansible" {
   ami           = "ami-0e9107ed11be76fde"
   instance_type = "t2.micro"
   associate_public_ip_address = "true"
