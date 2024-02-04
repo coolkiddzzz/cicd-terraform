@@ -10,3 +10,10 @@ variable "vpc_security_group_ids" {
   type        = list
   default = ["sg-035b6442f9f859979"]
 }
+
+variable key_name {
+  description = "Key name for ec2"
+  type        = string
+  default = wy-useast1-keypair
+
+}

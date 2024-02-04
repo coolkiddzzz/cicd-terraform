@@ -24,9 +24,9 @@ resource "aws_s3_bucket" "new_bucket" {
   }
 }
 
-resource "tls_private_key" "coolkidz-key-test" {
-  algorithm   = "ECDSA"
-  ecdsa_curve = "P384"
+resource "aws_key_pair" "deployer" {
+  key_name   = "deployer-key"
+  public_key = var.public_key
 }
 
 
@@ -36,7 +36,7 @@ resource "aws_instance" "webserver" {
   associate_public_ip_address = "true"
   subnet_id = var.subnet_id
   vpc_security_group_ids =  var.vpc_security_group_ids
-  key_name = "coolkidz-key-test"
+  key_name = var.key_name
   tags = {
     Name = "waiyee-webserver1"
   }
