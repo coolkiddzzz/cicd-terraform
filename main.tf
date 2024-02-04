@@ -15,7 +15,6 @@ resource "aws_sns_topic" "user_updates" {
   name = "waiyee-sns-test-branch-2"
 }
 
-
 resource "aws_s3_bucket" "new_bucket" {
   bucket = "wy-tf-bucket"
 
@@ -34,6 +33,7 @@ resource "aws_instance" "webserver-1" {
   tags = {
     Name = "waiyee-webserver1"
   }
+
 }
 
 resource "aws_instance" "webserver-2" {
@@ -59,3 +59,4 @@ resource "aws_instance" "webserver-ansible" {
     Name = "waiyee-webserver-ansible"
   }
 }
+
