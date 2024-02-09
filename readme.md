@@ -24,11 +24,12 @@ Managing AWS resources using ansible:
   - Enter the EC2s IP address in the ```ansible > inventory.yaml``` file using vi editor.
   - cd to ansible folder and run the command ```ansible-playbook -i inventory.yml install.yml```
   - Check if httpd is running on the other servers using ```sudo systemctl status httpd```
-  - 
+- If successful, it shows that ansible has properly configured httpd on the target servers.
 
 **Tools Used**
 - Terraform
 - Github actions
 - AWS resources
+- Ansible
 
 
