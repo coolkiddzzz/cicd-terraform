@@ -1,20 +1,9 @@
 
-terraform {
-  backend "s3" {
-    bucket = "sctp-ce5-tfstate-bucket-1"
-    key    = "wy.tfstate"
-    region = "us-east-1"
-  }
-}
-
-provider "aws" {
-  region = "us-east-1"
-}
-
 resource "aws_sns_topic" "user_updates" {
-  name = "waiyee-sns-test-branch-2"
+  name = var.sns
 }
 
+// Creating aws s3 bucket
 resource "aws_s3_bucket" "new_bucket" {
   bucket = "wy-tf-bucket"
 
@@ -23,6 +12,7 @@ resource "aws_s3_bucket" "new_bucket" {
   }
 }
  
+// For ansible: Creating aws ec2 1
 resource "aws_instance" "webserver-1" {
   ami           = "ami-0e9107ed11be76fde"
   instance_type = "t2.micro"
@@ -36,6 +26,7 @@ resource "aws_instance" "webserver-1" {
 
 }
 
+// For ansible: Creating aws ec2 2
 resource "aws_instance" "webserver-2" {
   ami           = "ami-0e9107ed11be76fde"
   instance_type = "t2.micro"
@@ -48,6 +39,7 @@ resource "aws_instance" "webserver-2" {
   }
 }
 
+// For ansible: Creating aws ec2 ansible
 resource "aws_instance" "webserver-ansible" {
   ami           = "ami-0e9107ed11be76fde"
   instance_type = "t2.micro"
@@ -59,4 +51,3 @@ resource "aws_instance" "webserver-ansible" {
     Name = "waiyee-webserver-ansible"
   }
 }
-
