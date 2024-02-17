@@ -42,5 +42,6 @@ jobs: # what task u want it to run
 
 #terraform plan -> get the workflow file (TRY)
    - name: Terraform Plan
-     run: terraform plan --var-file=${{github.jobs[github.job].name}}.tfvars
+      echo "${{github.jobs[github.job].name}}"
+     run: terraform plan --var-file= ${{github.jobs[github.job].name}}.tfvars
 ##     run: terraform plan --var-file=${{github}}
