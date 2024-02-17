@@ -1,7 +1,7 @@
-variable "sns" {
+variable "sns_name" {
   description = "sns name"
   type        = string
-  default     = "wy-variable"
+  default     = "mwaiyee-variable"
 }
 
 variable "subnet_id" {
@@ -21,4 +21,16 @@ variable "key_name" {
   type        = string
   default = "wy-useast1-keypair"
 
+}
+
+variable "aws_ami" {
+  description = "ami for ec2"
+  type        = string
+  default = "ami-0e9107ed11be76fde"
+}
+
+variable "aws_instance_type" {
+  description = "ami for ec2"
+  type        = string
+  default = "t2.micro"
 }
