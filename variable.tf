@@ -1,7 +1,7 @@
-variable "sns_name" {
+variable "env" {
   description = "sns name"
   type        = string
-  default     = "mwaiyee-variable"
+  default     = "test"
 }
 
 variable "subnet_id" {
