@@ -43,4 +43,10 @@ jobs: # what task u want it to run
 
 #terraform apply
    - name: Terraform Apply
-     run: terraform apply --auto-approve 
+     run: terraform apply --auto-approve -var-file="environments/${{github.event.inputs.environment}}.tfvars"
+# wait 10 minutes to destroy
+   - name: Wait for 10min 
+     run: | 
+      sleep 1200 
+   - name: Terraform destroy
+     run: terraform destroy --auto-approve -var-file="environments/${{github.event.inputs.environment}}.tfvars"

@@ -1,6 +1,10 @@
+locals {
+  topic-name = "mwaiyee-update-topic"
+}
+
 
 resource "aws_sns_topic" "user_updates" {
-  name = var.env
+  name = "${local.topic-name}-${var.env}"
 }
 
 /*

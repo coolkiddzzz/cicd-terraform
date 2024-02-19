@@ -1,1 +1,1 @@
-env = "mwaiyee-dev"
+env = "dev"
