@@ -40,7 +40,6 @@ jobs: # what task u want it to run
    - name: validate Terraform
      run: terraform validate
 
-#terraform plan -> get the workflow file (TRY)
+#terraform plan 
    - name: Terraform Plan 
-     run: terraform plan -var-file="environments/${{github.event.inputs.environment}}.tfvars"
-##     run: terraform plan --var-file=${{github}}
+     run: terraform plan 
