@@ -33,12 +33,12 @@ jobs: # what task u want it to run
      run: terraform init # run - command line that we run on our own
 
 # terraform workspace list
-- name: Terraform workspace list
-run : terraform workspace list
+   - name: Terraform workspace list
+     run : terraform workspace list
 
 # terraform workspace select 
-- name: Terraform workspace select
-run : terraform workspace select ${{ github.event.inputs.choice }}
+   - name: Terraform workspace select
+     run : terraform workspace select ${{github.event.inputs.choice}}
 
 #terraform fmt
    - name: Format Terraform
