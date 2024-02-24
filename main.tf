@@ -1,9 +1,13 @@
+locals {
+  topic-name = "mwaiyee-update-topic"
+}
+
 
 /* 
 
 // Creating sns topic
 resource "aws_sns_topic" "user_updates" {
-  name = var.env
+  name = "${local.topic-name}-${var.env}"
 }
  
 // Creating aws s3 bucket
