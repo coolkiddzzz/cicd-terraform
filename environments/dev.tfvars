@@ -1,1 +1,1 @@
-env = "mwaiyee-dev"
+bucket_name = "mwaiyee-dev"
