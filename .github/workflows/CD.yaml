@@ -56,7 +56,7 @@ jobs: # what task u want it to run
 
 #terraform apply
    - name: Terraform Apply
-     run: terraform apply -var-file=${{ github.event.inputs.choice }}.tfvars -auto-approve
+     run: terraform apply -var-file ="environments/${{ github.event.inputs.choice }}.tfvars" -auto-approve
 
 ## wait to verify ec2 destroyed
    - name: Pause 3min to verify bucket creation
@@ -64,4 +64,5 @@ jobs: # what task u want it to run
 
 ## terraform destroy 
    - name: Terraform destroy
-     run: terraform destroy -var-file=${{ github.event.inputs.choice }}.tfvars -auto-approve
+     run: terraform destroy -var-file="environments/${{ github.event.inputs.choice }}.tfvars" -auto-approve
+
