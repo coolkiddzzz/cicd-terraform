@@ -52,11 +52,15 @@ jobs: # what task u want it to run
 
 # terraform workspace select 
    - name: Terraform workspace new env and select
-     run : terraform workspace select ${{ github.event.inputs.choice }} || terraform workspace new ${{ github.event.inputs.choice }}
+     run : terraform workspace select ${{ github.event.inputs.choice  }} || terraform workspace new ${{ github.event.inputs.choice }}
+
+#terraform plan
+   - name: Terraform plan
+     run: terraform plan --var-file="environments/${{ github.event.inputs.choice }}.tfvars" -auto-approve
 
 #terraform apply
    - name: Terraform Apply
-     run: terraform apply --var-file ="environments/${{ github.event.inputs.choice }}.tfvars" -auto-approve
+     run: terraform apply --var-file="environments/${{ github.event.inputs.choice }}.tfvars" -auto-approve
 
 ## wait to verify ec2 destroyed
    - name: Pause 3min to verify bucket creation
