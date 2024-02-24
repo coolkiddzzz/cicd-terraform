@@ -64,4 +64,4 @@ jobs: # what task u want it to run
 
 ## terraform destroy 
    - name: Terraform destroy
-     run: terraform destroy -var-file="environments/${{ github.event.inputs.choice }}.tfvars" -auto-approve
+     run: terraform destroy --var-file="environments/${{ github.event.inputs.choice }}.tfvars" -auto-approve
