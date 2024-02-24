@@ -4,7 +4,7 @@ name: Terraform CD
 on:
   workflow_dispatch:
     inputs:
-      environment:
+      choice:
         description: 'Environment to run tf apply on'
         required: true
         default: "dev"
@@ -37,16 +37,31 @@ jobs: # what task u want it to run
    - name: Set up Terraform
      uses: hashicorp/setup-terraform@v1
 
+# print env 
+   - name: print environment
+     run:
+      echo "env choice is ${{ github.event.inputs.choice }}"
+      
 #terraform init
    - name: Initialize Terraform
      run: terraform init # run - command line that we run on our own
 
+# terraform workspace list
+   - name: Terraform workspace list
+     run : terraform workspace list
+
+# terraform workspace select 
+   - name: Terraform workspace new env and select
+     run : terraform workspace select ${{ github.event.inputs.choice }} || terraform workspace new ${{ github.event.inputs.choice }}
+
 #terraform apply
    - name: Terraform Apply
-     run: terraform apply --auto-approve -var-file="environments/${{github.event.inputs.environment}}.tfvars"
-# wait 10 minutes to destroy
-   - name: Wait for 10min 
-     run: | 
-      sleep 1200 
+     run: terraform apply -var-file=${{ github.event.inputs.choice }}.tfvars -auto-approve
+
+## wait to verify ec2 destroyed
+   - name: Pause 3min to verify bucket creation
+     run: sleep 1800
+
+## terraform destroy 
    - name: Terraform destroy
-     run: terraform destroy --auto-approve -var-file="environments/${{github.event.inputs.environment}}.tfvars"
+     run: terraform destroy -var-file=${{ github.event.inputs.choice }}.tfvars -auto-approve

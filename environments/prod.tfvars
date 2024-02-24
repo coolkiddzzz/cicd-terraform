@@ -1,1 +1,2 @@
-env = "prod"
+
+bucket_name = "mwaiyee-prod"

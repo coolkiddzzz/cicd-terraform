@@ -32,6 +32,14 @@ jobs: # what task u want it to run
    - name: Initialize Terraform
      run: terraform init # run - command line that we run on our own
 
+# terraform workspace list
+   - name: Terraform workspace list
+     run : terraform workspace list
+
+# terraform workspace select 
+   - name: Terraform workspace select
+     run : terraform workspace select ${{github.event.inputs.choice}}
+
 #terraform fmt
    - name: Format Terraform
      run: terraform fmt
@@ -40,6 +48,6 @@ jobs: # what task u want it to run
    - name: validate Terraform
      run: terraform validate
 
-#terraform plan 
-   - name: Terraform Plan 
-     run: terraform plan 
+#terraform plan
+   - name: Terraform Plan
+     run: terraform plan --var-file "environments/dev.tfvars"
