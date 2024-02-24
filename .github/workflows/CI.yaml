@@ -38,7 +38,7 @@ jobs: # what task u want it to run
 
 # terraform workspace select 
    - name: Terraform workspace select
-     run : terraform workspace select ${{github.event.inputs.choice}}
+     run : terraform workspace select dev
 
 #terraform fmt
    - name: Format Terraform
