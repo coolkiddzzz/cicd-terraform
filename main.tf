@@ -30,7 +30,7 @@ resource "aws_instance" "webserver-1" {
   vpc_security_group_ids =  var.vpc_security_group_ids
   key_name = var.key_name
   tags = {
-    Name = "${var.bucket_name}-webserver1"
+    Name = "${var.ec2_name}-webserver1"
   }
 
 }

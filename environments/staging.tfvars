@@ -1,1 +1,1 @@
-bucket_name = "mwaiyee-staging"
+ec2_name = "mwaiyee-staging"

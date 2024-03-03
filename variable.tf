@@ -35,7 +35,7 @@ variable "aws_instance_type" {
   default = "t2.micro"
 }
 
-variable "bucket_name" {}
+variable "ec2_name" {}
 
 variable "security_group_name" {
   description = "security group name"
