@@ -21,6 +21,7 @@ resource "aws_s3_bucket" "new_bucket" {
 
 */ 
 
+// Creating EC2
 resource "aws_instance" "webserver-1" {
   ami           = var.aws_ami
   instance_type = var.aws_instance_type

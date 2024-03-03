@@ -14,6 +14,7 @@ on:
         - dev
         - staging
         - prod
+        - test
 
 # declare the running agent (what VM to run?)
 jobs: # what task u want it to run 

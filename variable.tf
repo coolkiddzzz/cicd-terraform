@@ -36,3 +36,9 @@ variable "aws_instance_type" {
 }
 
 variable "bucket_name" {}
+
+variable "security_group_name" {
+  description = "security group name"
+  type        = string
+  default = "wy-sg-allow-http-https-ssh-from-ip"
+}
