@@ -1,6 +1,7 @@
 name: Terraform CD
 
 # whenever push any code into github repo, this yaml file will run 
+# OR user manually indicate workflow dispatch
 on:
   workflow_dispatch:
     inputs:
